@@ -8,7 +8,7 @@ module Players
     def move(board)
       WIN_COMBINATIONS.each do |combo|
         if board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token
-          return (combo[1] + 1)
+          return combo[1] + 2
         end
       end
       ORDER.each do |cell|
