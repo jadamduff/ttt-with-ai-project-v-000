@@ -12,9 +12,9 @@ module Players
         end
       end
 
-      WIN_COMBINATIONS.each do |combo|
-        if board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token
-          return (combo[1] + 1).to_s
+      WIN_COMBINATIONS.each do |combo1|
+        if board.cells[combo1[0]] == self.token && board.cells[combo1[2]] == self.token
+          return (combo1[1] + 1).to_s
         end
       end
       ORDER.each do |cell|
