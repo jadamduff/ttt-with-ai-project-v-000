@@ -7,6 +7,12 @@ module Players
 
     def move(board)
       WIN_COMBINATIONS.each do |combo|
+        if (!board.cells[combo[0]] == self.token && taken?((combo[0] + 1).to_s)) && (!board.cells[combo[2]] == self.token && taken?((combo[2] + 1).to_s))
+          return (combo[1] + 1).to_s
+        end
+      end
+
+      WIN_COMBINATIONS.each do |combo|
         if board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token
           return (combo[1] + 1).to_s
         end
