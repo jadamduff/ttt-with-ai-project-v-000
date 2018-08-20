@@ -12,7 +12,7 @@ module Players
         end
       end
       WIN_COMBINATIONS.each do |combo|
-        if board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token
+        if board.cells[combo[0] + 1] == self.token && board.cells[combo[2] + 1] == self.token
           return (combo[1] + 1)
         end
       end
