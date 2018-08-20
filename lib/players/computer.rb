@@ -38,7 +38,7 @@ module Players
         apply_counter(board)
       end
     end
-    
+
   end
-  
+
 end
