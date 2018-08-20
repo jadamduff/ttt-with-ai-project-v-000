@@ -6,7 +6,7 @@ module Players
   class Computer < Player
 
     def test_opp_gap(board)
-      test = WIN_COMBINATIONS.find {|combo| (!board.cells[combo[0]] == self.token) && (!board.cells[combo[2]] == self.token)}
+      test = WIN_COMBINATIONS.find {|combo| !board.cells[combo[0]] == self.token && !board.cells[combo[2]] == self.token && !board.valid_move?([combo[0]]) && !board.valid_move?([combo[2]]) && board.valid_move?([combo[1]])}
       test ? test[2].to_s : false
     end
 
