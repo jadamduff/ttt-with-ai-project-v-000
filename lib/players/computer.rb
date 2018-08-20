@@ -11,7 +11,7 @@ module Players
     end
 
     def test_own_gap(board)
-      test = WIN_COMBINATIONS.find {|combo1| board.cells[combo1[0]] == self.token && board.cells[combo1[2]] == self.token && !board.taken?([combo[1]])}
+      test = WIN_COMBINATIONS.find {|combo| board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token && !board.taken?([combo[1]])}
       test ? test[2].to_s : false
     end
 
