@@ -17,7 +17,7 @@ module Players
 
     def apply_counter(board)
       test = ORDER.detect {|cell| !board.taken?(cell)}
-      test ? cell.to_s : false
+      test ? test.to_s : false
     end
 
     def move(board)
