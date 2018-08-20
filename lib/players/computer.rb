@@ -29,7 +29,7 @@ module Players
       elsif test_own_gap(board)
         return test_own_gap(board)
       else
-        apply_counter(board)
+        return apply_counter(board)
       end
     end
 
