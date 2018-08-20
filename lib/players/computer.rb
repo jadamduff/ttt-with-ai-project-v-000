@@ -13,7 +13,7 @@ module Players
       end
       ORDER.each do |cell|
         if !board.taken?(cell)
-          return cell.to_s
+          return cell.to_str
         end
       end
     end
