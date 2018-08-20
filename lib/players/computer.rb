@@ -6,17 +6,17 @@ module Players
   class Computer < Player
 
     def test_opp_gap(board)
-      test = WIN_COMBINATIONS.detect {|combo| (!board.cells[combo[0]] == self.token) && (!board.cells[combo[2]] == self.token)}
+      test = WIN_COMBINATIONS.find {|combo| (!board.cells[combo[0]] == self.token) && (!board.cells[combo[2]] == self.token)}
       test ? test[2].to_s : false
     end
 
     def test_own_gap(board)
-      test = WIN_COMBINATIONS.detect {|combo1| board.cells[combo1[0]] == self.token && board.cells[combo1[2]] == self.token}
+      test = WIN_COMBINATIONS.find {|combo1| board.cells[combo1[0]] == self.token && board.cells[combo1[2]] == self.token}
       test ? test[2].to_s : false
     end
 
     def apply_counter(board)
-      test = ORDER.detect {|cell| !board.taken?(cell)}
+      test = ORDER.find {|cell| !board.taken?(cell)}
       test ? test.to_s : false
     end
 
