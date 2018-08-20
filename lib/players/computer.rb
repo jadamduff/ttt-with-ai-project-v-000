@@ -7,20 +7,17 @@ module Players
 
     def test_opp_gap(board)
       test = WIN_COMBINATIONS.detect {|combo| (!board.cells[combo[0]] == self.token) && (!board.cells[combo[2]] == self.token)}
-      return test[2].to_s if test != nil
+      test ? test[2].to_s : false
     end
 
     def test_own_gap(board)
       test = WIN_COMBINATIONS.detect {|combo1| board.cells[combo1[0]] == self.token && board.cells[combo1[2]] == self.token}
-      return test[2].to_s if test
+      test ? test[2].to_s : false
     end
 
     def apply_counter(board)
-      ORDER.each do |cell|
-        if !board.taken?(cell)
-          return cell.to_s
-        end
-      end
+      test = ORDER.detect {|cell| !board.taken?(cell)
+      test ? cell.to_s : false
     end
 
     def move(board)
