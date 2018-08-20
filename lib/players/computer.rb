@@ -20,8 +20,18 @@ module Players
       test ? test.to_s : false
     end
 
+    def empty?(board)
+      if board.cells.any? {|x| x != " "}
+        return false
+      else
+        return true
+      end
+    end
+
     def move(board)
-      if test_opp_gap(board)
+      if empty?
+        return rand(1..9).to_s
+      elsif test_opp_gap(board)
         return test_opp_gap(board)
       elsif test_own_gap(board)
         return test_own_gap(board)
