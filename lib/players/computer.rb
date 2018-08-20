@@ -29,7 +29,7 @@ module Players
     end
 
     def move(board)
-      if empty?
+      if empty?(board)
         return rand(1..9).to_s
       elsif test_opp_gap(board)
         return test_opp_gap(board)
