@@ -19,7 +19,7 @@ module Players
       end
       ORDER.each do |cell|
         if !board.taken?(cell)
-          cell.to_s
+          return cell.to_s
         end
       end
     end
