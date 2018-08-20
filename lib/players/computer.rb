@@ -7,7 +7,7 @@ module Players
 
     def test_opp_gap(board)
       test = WIN_COMBINATIONS.find {|combo| (!board.cells[combo[0]] == self.token) && (!board.cells[combo[2]] == self.token)}
-      return test[3].to_s if test
+      return test[2].to_s if test
     end
 
     def test_own_gap(board)
