@@ -17,11 +17,7 @@ module Players
           return (combo1[1] + 1).to_s
         end
       end
-      ORDER.each do |cell|
-        if !board.taken?(cell)
-          return cell.to_s
-        end
-      end
+      
     end
   end
 end
